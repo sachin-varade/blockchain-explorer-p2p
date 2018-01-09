@@ -1,0 +1,50 @@
+{
+	"network-config": {
+		"orderer": [{
+			"url": "grpc://127.0.0.1:7050",
+			"server-hostname": "orderer.syngenta.com"
+		}],
+		"org1": {
+			"name": "peersyngentaOrg",
+			"mspid": "SyngentaOrgMSP",
+			"ca": "http://127.0.0.1:7054",
+			"peer1": {
+				"requests": "grpc://127.0.0.1:7051",
+				"events": "grpc://127.0.0.1:7053",
+				"server-hostname": "peer0.syngentaOrg.syngenta.com"
+			},
+			"admin": {
+				"key": "/fabric-docker-compose-svt/crypto-config/peerOrganizations/syngentaOrg.syngenta.com/users/Admin@syngentaOrg.syngenta.com/msp/keystore",
+				"cert": "/fabric-docker-compose-svt/crypto-config/peerOrganizations/syngentaOrg.syngenta.com/users/Admin@syngentaOrg.syngenta.com/msp/signcerts"
+			}
+		},
+		"org2": {
+			"name": "peervendorOrg",
+			"mspid": "VendorOrgMSP",
+			"ca": "http://127.0.0.1:8054",
+			"peer1": {
+				"requests": "grpc://127.0.0.1:8051",
+				"events": "grpc://127.0.0.1:8053",
+				"server-hostname": "peer0.vendorOrg.syngenta.com"
+			},
+			"admin": {
+				"key": "/fabric-docker-compose-svt/crypto-config/peerOrganizations/vendorOrg.syngenta.com/users/Admin@vendorOrg.syngenta.com/msp/keystore",
+				"cert": "/fabric-docker-compose-svt/crypto-config/peerOrganizations/vendorOrg.syngenta.com/users/Admin@vendorOrg.syngenta.com/msp/signcerts"
+			}
+		},
+		"org3": {
+			"name": "peerbankOrg",
+			"mspid": "BankOrgMSP",
+			"ca": "http://127.0.0.1:9054",
+			"peer1": {
+				"requests": "grpc://127.0.0.1:9051",
+				"events": "grpc://127.0.0.1:9053",
+				"server-hostname": "peer0.bankOrg.syngenta.com"
+			},
+			"admin": {
+				"key": "/fabric-docker-compose-svt/crypto-config/peerOrganizations/bankOrg.syngenta.com/users/Admin@bankOrg.syngenta.com/msp/keystore",
+				"cert": "/fabric-docker-compose-svt/crypto-config/peerOrganizations/bankOrg.syngenta.com/users/Admin@bankOrg.syngenta.com/msp/signcerts"
+			}
+		}
+	}
+}
